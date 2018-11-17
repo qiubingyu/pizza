@@ -8,8 +8,6 @@ import com.sun.net.httpserver.HttpHandler;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.net.InetSocketAddress;
-import java.util.List;
-import java.util.Map;
 
 public class HttpServer {
 
@@ -29,6 +27,7 @@ public class HttpServer {
             Headers headers = httpExchange.getRequestHeaders();
 
             System.out.println(httpExchange.getRequestURI().getQuery());
+            System.out.println(httpExchange.getRequestURI().getRawQuery());
             //调用接口
             String anInterface = headers.getFirst("interface");
             String method = headers.getFirst("method");
